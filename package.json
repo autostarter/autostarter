@@ -1,0 +1,17 @@
+{
+  "name": "autostarter",
+  "version": "0.1.0",
+  "description": "Project starter",
+  "main": "src/autostarter.js",
+  "bin": {
+    "autostarter": "bin/autostarter.js"
+  },
+  "repository": "https://github.com/pfraces/autostarter.git",
+  "license": "MIT",
+  "dependencies": {
+    "mustache": "*",
+    "shelljs": "*",
+    "minimist": "*",
+    "user-home": "*"
+  }
+}
