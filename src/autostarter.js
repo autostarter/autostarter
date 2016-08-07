@@ -2,12 +2,8 @@
 
 var join = require('path').join;
 var mustache = require('mustache');
-var shell = require('shelljs');
+var shell = require('shelljs/global');
 var template = require('./template');
-
-var test = shell.test;
-var mkdir = shell.mkdir;
-var cat = shell.cat;
 
 var renderFilePath = function (data) {
   return function (path) {
@@ -30,7 +26,7 @@ var autostarter = function (src, dest, data) {
     var srcFile = join(src, file),
         destFile = join(dest, mustache.render(file, data));
 
-    mustache.render(cat(srcFile), data)
+    mustache.render(cat(srcFile).toString(), data)
     .to(destFile);
   });
 };
